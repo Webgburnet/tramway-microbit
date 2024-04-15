@@ -13,6 +13,7 @@ basic.forever(function () {
     if (huskylens.isAppear_s(HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
         if (huskylens.readBox_ss(1, Content3.ID) == 1) {
             vitesse = 50
+            strip.showColor(neopixel.colors(NeoPixelColors.Green))
             radio.sendString("zone1")
         } else if (huskylens.readBox_ss(1, Content3.ID) == 2) {
             vitesse = 0
@@ -20,7 +21,6 @@ basic.forever(function () {
             radio.sendString("zone2")
         } else {
             vitesse = 80
-            strip.showColor(neopixel.colors(NeoPixelColors.Green))
         }
     }
     maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, vitesse)
