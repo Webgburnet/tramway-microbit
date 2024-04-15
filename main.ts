@@ -3,7 +3,7 @@ huskylens.initI2c()
 huskylens.initMode(protocolAlgorithm.ALGORITHM_COLOR_RECOGNITION)
 radio.setGroup(245)
 let vitesse = 0
-let strip: number = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
+let strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 music.ringTone(262)
 basic.pause(1000)
@@ -12,7 +12,7 @@ basic.forever(function () {
     huskylens.request()
     if (huskylens.isAppear_s(HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
         if (huskylens.readBox_ss(1, Content3.ID) == 1) {
-            strip = 50
+            vitesse = 50
             radio.sendString("zone1")
         } else if (huskylens.readBox_ss(1, Content3.ID) == 2) {
             vitesse = 0
