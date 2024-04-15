@@ -23,4 +23,5 @@ basic.forever(function () {
             strip.showColor(neopixel.colors(NeoPixelColors.Green))
         }
     }
+    maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, vitesse)
 })
